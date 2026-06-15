@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-06-15-car-api",
+  "current_phase": "plan",
+  "next_phase": "execution",
+  "spec": "docs/superpowers/specs/2026-06-15-car-api-design.md",
+  "plan": "docs/superpowers/plans/2026-06-15-car-api/overview.md",
+  "current_task": "task-001-scaffold-docker-yii.md",
+  "completed_tasks": [],
+  "blocked_tasks": [],
+  "base_commit": "c34d650",
+  "last_green_commit": null,
+  "next_action": "Execute task-001-scaffold-docker-yii.md, then continue through the plan tasks."
+}
