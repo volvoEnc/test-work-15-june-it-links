@@ -11,7 +11,7 @@ services:
       DB_PASSWORD: postgres
       YII_COOKIE_VALIDATION_KEY: local-dev-cookie-validation-key
     ports:
-      - "8080:80"
+      - "18080:80"
     volumes:
       - ./:/var/www/html
 
