@@ -1,2 +1,9 @@
 .idea
 car_api_yii2_technical_spec.md
+vendor/
+runtime/
+web/assets/
+tests/_output/
+.phpunit.cache/
+.env
+composer.phar

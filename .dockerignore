@@ -1,0 +1,8 @@
+.git
+.idea
+vendor
+runtime
+web/assets
+tests/_output
+composer.lock
+car_api_yii2_technical_spec.md

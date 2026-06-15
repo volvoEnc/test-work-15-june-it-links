@@ -1,0 +1,44 @@
+services:
+  app:
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_DSN: pgsql:host=db;port=5432;dbname=car_api
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      YII_COOKIE_VALIDATION_KEY: local-dev-cookie-validation-key
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+
+  composer:
+    build:
+      context: .
+    entrypoint:
+      - composer
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: "1"
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: car_api
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d car_api"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
